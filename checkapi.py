@@ -46,7 +46,7 @@ for service in services:
 			print(str(response.status_code) + ' ' + str(response.reason))
 			if response.status_code != 200:
 				tb = telebot.TeleBot(BOT_TOKEN)
-				DESTINATION = -292265385
+				DESTINATION = xxxxx
 				SUBJECT = service['nome']
 				MESSAGE = 'status webservice ' + str(response.status_code)
 				tb.send_message(DESTINATION,SUBJECT + '\n' + MESSAGE, disable_web_page_preview=True, parse_mode='HTML')
@@ -58,7 +58,7 @@ for service in services:
 				response = requests.request("GET", url=service['url'], timeout=response_timeout)
 			if response.status_code != 200:
 				tb = telebot.TeleBot(BOT_TOKEN)
-				DESTINATION = -292265385
+				DESTINATION = xxxxx
 				SUBJECT = service['nome']
 				MESSAGE = 'status webservice ' + str(response.status_code)
 				tb.send_message(DESTINATION,SUBJECT + '\n' + MESSAGE, disable_web_page_preview=True, parse_mode='HTML')
@@ -66,7 +66,7 @@ for service in services:
 				print(str(response.status_code))
 	except (requests.exceptions.Timeout, requests.exceptions.ConnectionError):
 		tb = telebot.TeleBot(BOT_TOKEN)
-		DESTINATION = -292265385
+		DESTINATION = xxxxx
 		SUBJECT = service['nome']
 		MESSAGE = 'Servico Indisponivel '
 		tb.send_message(DESTINATION,SUBJECT + '\n' + MESSAGE, disable_web_page_preview=True, parse_mode='HTML')
